@@ -1,0 +1,34 @@
+.container {
+  padding: 6rem 6rem;
+  height: 50rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heroTxt {
+  flex: 50%;
+  margin-top: 5rem;
+
+  &__txt {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__heading {
+    font-size: 2.6rem;
+  }
+}
+
+.heroBtn {
+  margin-top: 2rem;
+  display: flex;
+  //   justify-content: space-around;
+  gap: 2rem;
+  align-items: center;
+}
+
+.heroImg {
+  flex: 50%;
+  text-align: center;
+  margin-left: 6rem;
+}

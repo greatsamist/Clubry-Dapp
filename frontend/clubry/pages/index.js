@@ -1,6 +1,10 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import HeroCta from "../components/HeroSection/HeroCta";
+import HeroDetails from "../components/HeroSection/HeroDetails";
+import Footer from "../components/layout/Footer";
+import Header from "../components/layout/Header";
+import styles from "../styles/Home.module.scss";
 
 export default function Home() {
   return (
@@ -10,6 +14,10 @@ export default function Home() {
         <meta name="Clubry" content="Clubry" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header />
+      <HeroCta />
+      <HeroDetails />
+      <Footer />
     </div>
   );
 }

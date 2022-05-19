@@ -1,0 +1,36 @@
+.container {
+  margin: 10rem;
+}
+
+.section {
+  margin-bottom: 8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6rem;
+
+  &__img {
+    flex: 50%;
+    // text-align: center;
+  }
+
+  &__imgRight {
+    text-align: center;
+  }
+
+  &__txt {
+    flex: 50%;
+  }
+
+  &__right {
+    text-align: right;
+  }
+
+  &__left {
+    text-align: left;
+  }
+
+  &__heading4 {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,26 @@
+@import "./abstracts/variable.module.scss";
+
+.container {
+  padding: 2rem 4rem 6rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  color: $color-primary;
+}
+
+.nav {
+  color: $color-primary;
+  display: flex;
+
+  &__para {
+    margin-left: 1.5rem;
+    color: $color-primary;
+  }
+}

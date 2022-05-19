@@ -1,0 +1,63 @@
+@import "./abstracts/variable.module.scss";
+
+.header {
+  height: 8rem;
+
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 4rem;
+  }
+
+  &__logoText {
+    margin-left: 1rem;
+    font-weight: 700;
+    font-size: 2rem;
+    color: $color-primary;
+    letter-spacing: 0.2rem;
+    cursor: pointer;
+  }
+
+  &__connect {
+    margin-right: 4rem;
+  }
+
+  &__connectBtn {
+    padding: 1rem;
+    margin-right: 4rem;
+    font-family: inherit;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #9f6ed3;
+    border: 1px solid #9f6ed391;
+    background-color: #9f6ed323;
+    border-radius: 0.4rem;
+    cursor: pointer;
+  }
+
+  &__connected {
+    padding: 1rem;
+    margin-right: 4rem;
+    font-size: 1.4rem;
+    color: rgba(0, 0, 0, 0.697);
+    border: 1px solid #9f6ed3c8;
+    border-radius: 8px;
+
+    display: flex;
+
+    justify-content: center;
+  }
+
+  &__accB {
+    margin-right: 2rem;
+  }
+
+  &__accTitle {
+    font-weight: 700;
+  }
+}
