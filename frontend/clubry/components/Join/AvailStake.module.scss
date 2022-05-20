@@ -1,0 +1,50 @@
+@import "../../styles/abstracts/variable.module.scss";
+
+.container {
+  margin-top: 8rem;
+}
+.header {
+  margin: auto;
+  width: 80%;
+  top: 0;
+  left: 0;
+  padding: 1.5rem 4rem;
+}
+
+.heading2 {
+  color: $color-primary;
+}
+
+.stake {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+
+  &__head {
+    flex: 40%;
+  }
+
+  &__heading {
+    color: $color-peach;
+  }
+}
+
+.member {
+  flex: 20%;
+  text-align: center;
+  //   margin-right: 2rem;
+
+  &__header {
+  }
+
+  &__num {
+    color: $color-peach;
+  }
+}
+
+.button {
+  text-align: center;
+  flex: 20%;
+}

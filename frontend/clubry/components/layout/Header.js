@@ -16,7 +16,7 @@ export default function Header() {
       </div>
       <div className={styles.header__connect}>
         <Link href="/">
-          <button className={`${btn.btn} ${btn.btn__animated}`}>
+          <button className={`${btn.btn} ${btn.__animated}`}>
             Connect Wallet
           </button>
         </Link>

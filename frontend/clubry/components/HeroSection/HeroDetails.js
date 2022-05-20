@@ -10,7 +10,13 @@ function HeroDetails() {
     <div className={styles.container}>
       <div className={styles.section}>
         <div className={styles.section__img}>
-          <Image src={bag} alt="invest" height={150} width={200} />
+          <img
+            className={styles.section__image}
+            src="./bag.png"
+            alt="invest"
+            // layout="fill"
+            // objectFit="contain"
+          />
         </div>
         <div className={`${styles.section__txt} ${styles.section__right}`}>
           <h4 className={styles.section__heading4}>
@@ -38,13 +44,23 @@ function HeroDetails() {
           </p>
         </div>
         <div className={`${styles.section__img} ${styles.section__imgRight}`}>
-          <Image src={money} alt="money" height={150} width={200} />
+          <img
+            className={styles.section__image}
+            src="./money.png"
+            alt="money"
+          />
         </div>
       </div>
 
       <div className={styles.section}>
         <div className={styles.section__img}>
-          <Image src={card} alt="invest" height={150} width={200} />
+          <img
+            className={styles.section__image}
+            src="./card.png"
+            alt="invest"
+            // height={150}
+            // width={200}
+          />
         </div>
         <div className={`${styles.section__txt} ${styles.section__right}`}>
           <h4 className={styles.section__heading4}>

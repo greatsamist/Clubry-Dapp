@@ -5,13 +5,13 @@
   &:link,
   &:visited {
     text-decoration: none;
-    padding: 1.5rem 3rem;
+    padding: 1.5rem 3.5rem;
     display: inline-block;
-    border-radius: 0.7rem;
+    border-radius: $default-radius;
     transition: all 0.2s;
     position: relative;
     font-family: inherit;
-    font-weight: inherit;
+    font-weight: 800;
     font-size: 1.2rem;
     color: $color-white;
     background-color: $color-primary;
@@ -22,7 +22,7 @@
   }
 
   &:hover {
-    color: $color-primary;
+    color: $color-white;
     border: 0.5px solid $color-primary;
     background-color: $color-primaryDark;
     transform: translateY(-3px);
@@ -41,23 +41,59 @@
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
   }
 
-  //   &--white {
-  //     background-color: $color-white;
-  //     color: $color-primaryDark;
+  &__white {
+    color: $color-black;
+    border: 0.5px solid $color-primary;
+    background-color: $color-white;
+    font-family: inherit;
 
-  //     &::after {
-  //       background-color: $color-white;
-  //     }
-  //   }
+    font-size: 1.2rem;
+    color: $color-black;
 
-  //   &--green {
-  //     background-color: $color-primary;
-  //     color: $color-white;
+    &:hover {
+      color: $color-white;
+      border: 0.5px solid $color-primary;
+      background-color: $color-primaryDark;
+      transform: translateY(-3px);
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    }
+    &::after {
+      background-color: $color-primaryDark;
+    }
+  }
 
-  //     &::after {
-  //       background-color: $color-primary;
-  //     }
-  //   }
+  &__transparent {
+    color: $color-white;
+    border: 0.5px solid $color-primary;
+    background-color: $color-primaryDark;
+
+    &:hover {
+      color: $color-white;
+      border: 0.5px solid $color-primary;
+      background-color: $color-primary;
+      transform: translateY(-3px);
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    }
+    &::after {
+      background-color: $color-primaryDark;
+    }
+  }
+  &__peach {
+    color: $color-black;
+    border: 0.5px solid $color-peach;
+    background-color: $color-peach;
+
+    &:hover {
+      color: $color-white;
+      border: 0.5px solid $color-primary;
+      background-color: $color-primaryDark;
+      transform: translateY(-3px);
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    }
+    &::after {
+      background-color: $color-primaryDark;
+    }
+  }
 
   &::after {
     content: "";

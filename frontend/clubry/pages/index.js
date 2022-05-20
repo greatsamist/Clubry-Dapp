@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
+// import Image from "next/image";
 import HeroCta from "../components/HeroSection/HeroCta";
 import HeroDetails from "../components/HeroSection/HeroDetails";
 import Footer from "../components/layout/Footer";

@@ -1,20 +1,38 @@
+@import "../styles/abstracts/variable.module.scss";
+
 .container {
-  margin: 10rem;
+  margin: auto;
+  padding: 2rem;
+  max-width: 70%;
 }
 
 .section {
-  margin-bottom: 8rem;
+  margin-bottom: 14rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 6rem;
+  gap: 8rem;
+
+  &:last-child {
+    margin-bottom: 4rem;
+  }
 
   &__img {
     flex: 50%;
+    // height: 250px;
+    // width: 250px;
     // text-align: center;
   }
 
+  &__image {
+    border-radius: 10px;
+    width: 50%;
+    -webkit-filter: drop-shadow(5px 5px 25px rgba(145, 126, 255, 0.311));
+    filter: drop-shadow(5px 5px 25px rgba(145, 126, 255, 0.311));
+  }
+
   &__imgRight {
+    // border-radius: 2rem;
     text-align: center;
   }
 
@@ -31,6 +49,25 @@
   }
 
   &__heading4 {
-    font-size: 2rem;
+    font-size: 1.6rem;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .container {
+    max-width: 90%;
+  }
+  .section {
+    top: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4rem;
+
+    &__right {
+      text-align: left;
+    }
   }
 }

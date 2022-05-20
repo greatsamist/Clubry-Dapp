@@ -1,0 +1,12 @@
+@import "../../styles/abstracts/variable.module.scss";
+
+.card {
+  top: 0;
+  left: 0;
+  margin: auto;
+  width: 80%;
+  background-color: $color-primaryLight;
+  padding: 4rem;
+  border-radius: $default-radius;
+  box-shadow: $default-shadow;
+}

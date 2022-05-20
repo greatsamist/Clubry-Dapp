@@ -1,6 +1,10 @@
+@import "../styles/abstracts/animation.module.scss";
+
 .container {
-  padding: 6rem 6rem;
-  height: 50rem;
+  margin: auto;
+  // padding: 6rem 6rem;
+  max-width: 90%;
+  height: 60rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,7 +26,6 @@
 .heroBtn {
   margin-top: 2rem;
   display: flex;
-  //   justify-content: space-around;
   gap: 2rem;
   align-items: center;
 }
@@ -31,4 +34,32 @@
   flex: 50%;
   text-align: center;
   margin-left: 6rem;
+  -webkit-filter: drop-shadow(5px 5px 25px rgba(145, 126, 255, 0.311));
+  filter: drop-shadow(5px 5px 25px rgba(145, 126, 255, 0.311));
+  animation: none;
+
+  &:hover {
+    animation: rotation 20s infinite linear;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12rem;
+  }
+
+  .heroTxt {
+    margin-bottom: 4rem;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }

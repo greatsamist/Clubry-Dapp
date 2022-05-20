@@ -1,0 +1,16 @@
+@import "../../styles/abstracts/variable.module.scss";
+
+.container {
+  margin-top: 1rem;
+}
+.header {
+  margin: auto;
+  width: 80%;
+  top: 0;
+  left: 0;
+  padding: 1.5rem 4rem;
+}
+
+.heading2 {
+  color: $color-primary;
+}
