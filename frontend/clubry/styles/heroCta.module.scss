@@ -8,6 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 12rem;
 }
 
 .heroTxt {
@@ -32,10 +33,11 @@
 
 .heroImg {
   flex: 50%;
-  text-align: center;
-  margin-left: 6rem;
-  -webkit-filter: drop-shadow(5px 5px 25px rgba(145, 126, 255, 0.311));
-  filter: drop-shadow(5px 5px 25px rgba(145, 126, 255, 0.311));
+  text-align: right;
+
+  // margin-left: 6rem;
+  -webkit-filter: drop-shadow(5px 5px 25px rgba(145, 126, 255, 0.5));
+  filter: drop-shadow(5px 5px 25px rgba(145, 126, 255, 0.5));
   animation: none;
 
   &:hover {

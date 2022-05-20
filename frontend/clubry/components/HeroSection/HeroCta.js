@@ -23,11 +23,13 @@ function HeroCta() {
               Join a club
             </button>
           </Link>
-          <button
-            className={`${btn.btn} ${btn.btn__animated} ${btn.btn__transparent}`}
-          >
-            Create a club
-          </button>
+          <Link href={"./join"}>
+            <button
+              className={`${btn.btn} ${btn.btn__animated} ${btn.btn__transparent}`}
+            >
+              Create a club
+            </button>
+          </Link>
         </div>
       </div>
       <div className={styles.heroImg}>
