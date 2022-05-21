@@ -4,3 +4,11 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+
+// next.config.js
+module.exports = {
+  images: {
+    loader: 'akamai',
+    path: '',
+  },
+}
