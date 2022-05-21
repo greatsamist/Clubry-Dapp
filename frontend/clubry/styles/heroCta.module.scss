@@ -7,13 +7,15 @@
   height: 60rem;
   display: flex;
   justify-content: space-between;
+  gap: 4rem;
   align-items: center;
   margin-bottom: 12rem;
 }
 
 .heroTxt {
-  flex: 50%;
+  // flex: 50%;
   margin-top: 5rem;
+ 
 
   &__txt {
     display: flex;
@@ -33,7 +35,8 @@
 
 .heroImg {
   flex: 50%;
-  text-align: right;
+  text-align: center;
+  
 
   // margin-left: 6rem;
   -webkit-filter: drop-shadow(5px 5px 25px rgba(145, 126, 255, 0.5));
@@ -54,6 +57,16 @@
 
   .heroTxt {
     margin-bottom: 4rem;
+  }
+
+  .heroImg{
+    top: 0;
+    width: 50%;
+  text-align: center;
+
+  &:hover {
+    animation: none;
+  }
   }
 }
 
