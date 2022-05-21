@@ -8,7 +8,6 @@ function join() {
   return (
     <div>
       <Header />
-
       <AvailStake />
       <TrendStake />
       <AllStake />
