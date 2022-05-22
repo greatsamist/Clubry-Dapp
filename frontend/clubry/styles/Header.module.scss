@@ -1,7 +1,7 @@
 @import "./abstracts/variable.module.scss";
 
 .header {
-  height: 8rem;
+  height: 12rem;
 
   display: flex;
   justify-content: space-between;
@@ -11,6 +11,7 @@
   &__title {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-left: 4rem;
   }
 
@@ -65,6 +66,7 @@
 .account{
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 1.5rem;
   font-weight: 800;
   font-size: 1.2rem;

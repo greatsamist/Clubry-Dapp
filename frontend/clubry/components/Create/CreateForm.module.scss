@@ -1,0 +1,53 @@
+@import "../../styles/abstracts/variable.module.scss";
+
+.create{
+	margin: auto;
+	width: 80%;
+	margin-top: 4rem;
+	margin-bottom: 8rem;
+
+	&__header{
+		margin-bottom: 1.5rem;
+		font-size: 1.2rem;
+	}
+
+	&__form{
+		display: flex;
+		flex-direction: column;
+	}
+	
+	&__formInput{
+		padding: 1.1em;
+		margin-bottom: 1.2em;
+		font-family: inherit;
+		font-weight: inherit;
+		color: $color-white;
+		background-color: $color-primaryLight;
+		border: none;
+		border-radius: 3px;
+		// box-shadow: $default-shadow;
+
+
+		&:hover, &:focus{
+			background-color: rgb(145, 126, 255, .3);
+			
+		}
+
+		&:focus, &:active{
+			border: 1px solid $color-primaryLight;
+		
+		}
+	}
+
+	&__formDesc{
+		height: 10rem;
+	}
+
+}
+
+.btn{
+	margin: auto;
+	width: 40rem;
+	padding: 1.1rem;
+	border-radius: 3px;
+}

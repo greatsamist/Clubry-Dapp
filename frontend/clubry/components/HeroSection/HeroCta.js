@@ -23,9 +23,9 @@ function HeroCta() {
               Join a club
             </button>
           </Link>
-          <Link href={"./join"}>
+          <Link href={"./create"}>
             <button
-              className={`${btn.btn} ${btn.btn__animated} ${btn.btn__transparent}`}
+              className={`${btn.btn} ${btn.btn__animated} ${btn.btn__peach}`}
             >
               Create a club
             </button>

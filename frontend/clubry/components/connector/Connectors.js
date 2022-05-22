@@ -7,15 +7,20 @@ export const providerOptions = {
   walletconnect: {
     package: WalletConnectProvider, // required
     options: {
-      infuraId: "630e61a016f845e58b198597976a9d12", // required
+      rpc: {
+        80001: "https://matic-mumbai.chainstacklabs.com",
+      },
+      network: 'polygonMumbai',
+            chainId: 80001,
+            infuraId: "630e61a016f845e58b198597976a9d12", // Required
     },
   },
   coinbasewallet: {
     package: CoinbaseWalletSDK, // Required
     options: {
       appName: "Clubry", // Required
-      infuraId: "630e61a016f845e58b198597976a9d12", // Required
-      rpc: "", // Optional if `infuraId` is provided; otherwise it's required
+      // infuraId: "630e61a016f845e58b198597976a9d12", // Required
+      rpc: "https://matic-mumbai.chainstacklabs.com", // Optional if `infuraId` is provided; otherwise it's required
       // chainId: 4, // Optional. It defaults to 1 if not provided
       darkMode: true, // Optional. Use dark theme, defaults to false
     },

@@ -38,6 +38,8 @@ export const Web3Provider = (props) => {
 		connectTo(DEFAULT_CHAIN_ID);
 		setProvider(prov);
 		getWeb3Account(prov);
+
+		return prov;
 	}
 	setProvider(prov);
 	getWeb3Account(prov);
@@ -134,6 +136,7 @@ export const Web3Provider = (props) => {
 	return undefined;
 	}  
 
+////////////////////////////////////////////////////////
 /**
  * Connect to a specific chain (asking wallet to switch/add network before connecting)
  * @param chainId chainId to connect to
