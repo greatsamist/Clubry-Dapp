@@ -5,12 +5,12 @@ import CreateForm from "../components/Create/CreateForm";
 
 import { clubryContractAddr, clubryAbi } from "../constants"
 import { Web3Context } from "../contexts/Web3Context";
-import { ethers} from "ethers"
+import { ethers} from "ethers";
 
 function create() {
-	const { provider, connect } = useContext(Web3Context)
-	const [ submitting, setSubmitting] = useState(false)
-	const [ completed, setcompleted] = useState(false)
+	const { provider, connect } = useContext(Web3Context);
+	const [ submitting, setSubmitting] = useState(false);
+	const [ completed, setcompleted] = useState(false);
 	
 	
 	const onClickCreate = async (e) => {
