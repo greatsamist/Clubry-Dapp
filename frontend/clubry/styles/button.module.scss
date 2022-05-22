@@ -111,6 +111,10 @@
     animation: moveInBotton 0.5s ease-out 0.75s;
     animation-fill-mode: backwards;
   }
+
+  &__cursor{
+    cursor: default;
+  }
 }
 
 // .btn-text {

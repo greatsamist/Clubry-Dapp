@@ -12,3 +12,6 @@ export const truncateAddress = (address) => {
 	return "0x" + val.toString(16);
   };
   
+  export const shortenWalletAddress = (address, length) => {
+    return address.slice(0, length) + '...' + address.slice(address.length - length);
+};

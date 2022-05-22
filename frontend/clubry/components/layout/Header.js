@@ -2,8 +2,9 @@ import { useContext } from 'react'
 import styles from "../../styles/Header.module.scss";
 import btn from "../../styles/button.module.scss";
 import Link from "next/link";
-
+import { utils } from 'ethers';
 import {Web3Context} from "../../contexts/Web3Context";
+import {shortenWalletAddress} from "../Helper/Utils";
 
 // import { toHex, truncateAddress } from "../Helper/Utils";
 
@@ -12,8 +13,8 @@ export default function Header() {
     provider,
     connect,
     connectTo,
-    disconnect,} = useContext(Web3Context)
-    
+    disconnect} = useContext(Web3Context)
+ 
   return (
     <div className={styles.header}>
       <div className={styles.header__title}>
@@ -21,7 +22,12 @@ export default function Header() {
           <p className={styles.header__logoText}>Clubry</p>
         </Link>
       </div>
+     <div className={styles.account}>
+     {wallet ? 
+       <button  className={`${btn.btn} ${btn.btn__cursor} ${btn.btn__animated} ${btn.btn__transparent}`}>{shortenWalletAddress(wallet.address, 6)}</button>
+        :("")}
       <div className={styles.header__connect}>
+      
         {!wallet ? (
           <button
             onClick={connect}
@@ -30,6 +36,7 @@ export default function Header() {
             Connect Wallet
           </button>
         ) : (
+         
           <button
             onClick={disconnect}
             className={`${btn.btn} ${btn.btn__animated} ${btn.btn__transparent}`}
@@ -37,6 +44,7 @@ export default function Header() {
             Disconnect
           </button>
         )}
+      </div>
       </div>
     </div>
   );

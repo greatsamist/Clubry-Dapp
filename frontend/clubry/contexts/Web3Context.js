@@ -1,4 +1,4 @@
-import { useEffect, createContext, useState, useRef } from 'react';
+import { useEffect, createContext, useState } from 'react';
 import Web3Modal, { CHAIN_DATA_LIST } from 'web3modal';
 import { ethers } from 'ethers';
 import {DEFAULT_CHAIN_ID, providerOptions } from "../components/connector/Connectors";
@@ -9,14 +9,8 @@ export const Web3Context = createContext()
 export const Web3Provider = (props) => {
 	const { children } = props;
 	const [provider, setProvider] = useState();
-  	// const [library, setLibrary] = useState();
-	  /** Wallet connection */
-	  // Create a reference to the Web3 Modal (used for connecting to Metamask) which persists as long as the page is open
-	  const web3ModalRef = useRef();
-	  // walletConnected keep track of whether the user's wallet is connected or not
-	  const [wallet, setWallet] = useState();
-	  const [modal, setModal] = useState();
-
+	const [wallet, setWallet] = useState();
+	const [modal, setModal] = useState();
 
 ////////////////////////////////////////////////////////////////////////////////////
 	const onConnect = async (modal) => {
@@ -34,10 +28,17 @@ export const Web3Provider = (props) => {
 
 	instance.on('chainChanged', (chainId) => {
 		const prov = new ethers.providers.Web3Provider(instance);
+		connectTo(DEFAULT_CHAIN_ID);
 		getWeb3Account(prov);
 	});
 
 	const prov = new ethers.providers.Web3Provider(instance);
+	const { chainId } = await prov.getNetwork();
+	if(chainId !== DEFAULT_CHAIN_ID) {
+		connectTo(DEFAULT_CHAIN_ID);
+		setProvider(prov);
+		getWeb3Account(prov);
+	}
 	setProvider(prov);
 	getWeb3Account(prov);
 
@@ -56,13 +57,15 @@ export const Web3Provider = (props) => {
 		const signer = provider.getSigner();
 		const address = await signer.getAddress();
 		myWallet.address = address;
-		const ensName = await provider.lookupAddress(address);
-		if (ensName) {
-			myWallet.ensName = ensName;
-			const resolver = await provider.getResolver(ensName);
-			const avatarMetaData = await resolver?.getText("avatar");
-			myWallet.avatar = avatarMetaData;
-		}
+		const bal = await provider.getBalance(address);
+		myWallet.balance = bal;
+		// const ensName = await provider.lookupAddress(address);
+		// if (ensName) {
+		// 	myWallet.ensName = ensName;
+		// 	const resolver = await provider.getResolver(ensName);
+		// 	const avatarMetaData = await resolver?.getText("avatar");
+		// 	myWallet.avatar = avatarMetaData;
+		// }
 	} catch (e) {
 		console.error(e);
 	}
@@ -95,6 +98,7 @@ export const Web3Provider = (props) => {
 
  // on page load init web3modal
 	useEffect(() => {
+		
 		const web3Modal = new Web3Modal({
 			network: CHAIN_DATA_LIST[DEFAULT_CHAIN_ID].network,
 			cacheProvider: true,
@@ -117,13 +121,18 @@ export const Web3Provider = (props) => {
      * Calling connect on the Web3Modal instance will open the modal and return a provider
      * @returns ethers.providers.Web3Provider (or undefined if not connected)
      */
+	
    const connect = async () => {
 	if (modal) {
+		try {
 		const provider = await onConnect(modal);
 		return provider;
+	} catch (error) {
+		console.error(error);
+		}
 	}
 	return undefined;
-	}
+	}  
 
 /**
  * Connect to a specific chain (asking wallet to switch/add network before connecting)
@@ -138,7 +147,7 @@ const connectTo = async (chainId) => {
 		throw Error('Provided ChainId not supported. Supported chains are: ', DEFAULT_CHAINS);
 	}
 	const walletNetwork = window.ethereum.networkVersion;
-	console.log('current and default wallet network: ', walletNetwork);
+	// console.log('current and default wallet network: ', walletNetwork);
 	if (walletNetwork !== chainId.toString()) {
 		return window.ethereum.request({
 			method: 'wallet_addEthereumChain',
