@@ -1,10 +1,13 @@
 import "../styles/globals.scss";
 
-// import { Web3ReactProvider } from "@web3-react/core";
-// import { Web3Provider } from "@ethersproject/providers";
+import { Web3Provider } from '../contexts/Web3Context';
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    
+  <Web3Provider>
+   <Component {...pageProps} />
+  </Web3Provider>)
 }
 
 export default MyApp;

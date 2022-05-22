@@ -15,6 +15,7 @@
     "ethers": "^5.6.7",
     "framer-motion": "^6",
     "next": "12.1.6",
+    "next-optimized-images": "^2.6.2",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "sass": "^1.51.0",

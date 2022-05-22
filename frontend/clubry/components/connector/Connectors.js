@@ -1,6 +1,8 @@
 import CoinbaseWalletSDK from "@coinbase/wallet-sdk";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 
+export const DEFAULT_CHAIN_ID = 4;
+
 export const providerOptions = {
   walletconnect: {
     package: WalletConnectProvider, // required
