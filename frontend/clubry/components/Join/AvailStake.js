@@ -2,6 +2,7 @@ import React from "react";
 import Card from "../Card/Card";
 import styles from "./AvailStake.module.scss";
 import btn from "../../styles/button.module.scss";
+import Link from "next/link"
 
 function AvailStake() {
   return (
@@ -30,9 +31,11 @@ function AvailStake() {
           </div>
 
           <div className={styles.button}>
+            <Link href="/statistic">
             <button className={`${btn.btn} ${btn.btn__white}`}>
               Buy Stake
             </button>
+            </Link>
           </div>
         </div>
       </Card>
