@@ -4,7 +4,7 @@ import AvailStake from "../components/Join/AvailStake";
 import TrendStake from "../components/Join/TrendStake";
 import Header from "../components/layout/Header";
 
-function join() {
+function Join() {
   return (
     <div>
       <Header />
@@ -15,4 +15,4 @@ function join() {
   );
 }
 
-export default join;
+export default Join;

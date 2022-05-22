@@ -7,7 +7,7 @@ import { clubryContractAddr, clubryAbi } from "../constants";
 import { Web3Context } from "../contexts/Web3Context";
 import { ethers } from "ethers";
 
-function create() {
+function Create() {
   const { provider, connect } = useContext(Web3Context);
   const [submitting, setSubmitting] = useState(false);
   const [completed, setCompleted] = useState(false);
@@ -54,4 +54,4 @@ function create() {
   );
 }
 
-export default create;
+export default Create;
