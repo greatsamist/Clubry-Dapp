@@ -1,11 +1,19 @@
-import React from "react";
+import { useContext } from 'react'
 import styles from "../../styles/Header.module.scss";
 import btn from "../../styles/button.module.scss";
 import Link from "next/link";
 
+import {Web3Context} from "../../contexts/Web3Context";
+
 // import { toHex, truncateAddress } from "../Helper/Utils";
 
-export default function Header({ disconnect, walletConnected, connectWallet }) {
+export default function Header() {
+  const {wallet,
+    provider,
+    connect,
+    connectTo,
+    disconnect,} = useContext(Web3Context)
+    
   return (
     <div className={styles.header}>
       <div className={styles.header__title}>
@@ -14,9 +22,9 @@ export default function Header({ disconnect, walletConnected, connectWallet }) {
         </Link>
       </div>
       <div className={styles.header__connect}>
-        {!walletConnected ? (
+        {!wallet ? (
           <button
-            onClick={connectWallet}
+            onClick={connect}
             className={`${btn.btn} ${btn.btn__animated}`}
           >
             Connect Wallet
