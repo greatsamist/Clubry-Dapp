@@ -46,14 +46,14 @@ function Create() {
       console.log(`New club address is` + ClubAddress);
       //////////////////////////////////////////////////
 
-      const ClubContractInstance = new Contract(ClubAddress, clubryAbi, signer);
+      // const ClubContractInstance = new Contract(ClubAddress, clubryAbi, signer);
 
-      const setClub = await ClubContractInstance.createClub(
-        data.member,
-        data.stake
-      );
+      // const setClub = await ClubContractInstance.createClub(
+      //   data.member,
+      //   data.stake
+      // );
 
-      await setClub.wait();
+      // await setClub.wait();
 
       setCompleted(true);
       setSubmitting(false);
