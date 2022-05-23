@@ -1,8 +1,8 @@
 # Clubry
 
-### Clubry is a collective investment scheme, where users come together to Co-invest. The idea behind clubry is bringing people who do not have enough funds for a project/investment to collaborate and make wiser decisions with there investments.
+Clubry is a collective investment scheme, where users come together to Co-invest. The idea behind clubry is bringing people who do not have enough funds for a project/investment to collaborate and make wiser decisions with there investments.
 
-![Homepage](https://github.com/greatsamist/Clubry-Dapp/blob/master/.docs/Homepage.PNG)
+![Homepage](https://github.com/greatsamist/Clubry-Dapp/blob/master/.docs/homepage.PNG)
 
 ### Features
 
