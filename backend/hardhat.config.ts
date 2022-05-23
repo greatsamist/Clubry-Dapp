@@ -11,7 +11,7 @@ const PRIVATE_KEY = process.env.PRIVATE_KEY;
 const POLYGONSCAN_KEY = process.env.POLYGONSCAN_KEY;
 
 module.exports = {
-  solidity: "0.8.10",
+  solidity: "0.8.8",
   networks: {
     mumbai: {
       url: ALCHEMY_API_KEY_URL,
