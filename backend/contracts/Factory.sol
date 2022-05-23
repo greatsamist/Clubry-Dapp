@@ -1,37 +1,41 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.8;
 
+// import our child contract
+import "./Clubry.sol";
 import "./Clone.sol";
 
-contract Factory is CloneFactory{
-     Child[] public children;
-     address public  masterContract;
+contract Factory is CloneFactory {
+    // stores an array of all child contract
+    Club[] public ClubArray;
 
-     constructor(address _masterContract){
-         masterContract = _masterContract;
-     }
+    address public masterContract;
 
-     function createChild(uint data) external{
-        Child child = Child(createClone(masterContract));
-        child.init(data);
-        children.push(child);
-     }
 
-     function getChildren() external view returns(Child[] memory){
-         return children;
-     }
+    constructor(address _masterContract) {
+        masterContract = _masterContract;
+    }
 
-}
+    event DataStored(address createdClubAddress);
 
-contract Child{
-    uint public data;
-    
-    // use this function instead of the constructor
-    // since creation will be done using createClone() function
+    function createClub() external {
+        Club club = Club(createClone(masterContract));
+        ClubArray.push(club);
+        emit DataStored(address(club));
+    }
 
-    function init(uint _data) external {
-        data = _data;
+    function getChildren() external view returns (Club[] memory) {
+        return ClubArray;
+    }
+
+    function gfSetClub(
+        uint256 _ClubArray,
+        uint128 numberOfPeople,
+        uint128 perPeople
+    ) public {
+        Club(address(ClubArray[_ClubArray])).createClub(
+            numberOfPeople,
+            perPeople
+        );
     }
 }
-
-

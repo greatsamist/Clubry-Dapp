@@ -2,17 +2,14 @@ import "@typechain/hardhat";
 import "@nomiclabs/hardhat-ethers";
 import "@nomiclabs/hardhat-waffle";
 require("@nomiclabs/hardhat-waffle");
-// require("dotenv").config({ path: ".env" });
 import * as dotenv from "dotenv";
 dotenv.config();
-
 
 const ALCHEMY_API_KEY_URL = process.env.ALCHEMY_API_KEY_URL || "";
 
 const PRIVATE_KEY = process.env.PRIVATE_KEY || "";
 
 const POLYGONSCAN_KEY = process.env.POLYGONSCAN_KEY || "";
-
 
 module.exports = {
   solidity: "0.8.8",
@@ -28,7 +25,6 @@ module.exports = {
     },
   },
 };
-
 
 // import * as dotenv from "dotenv";
 
