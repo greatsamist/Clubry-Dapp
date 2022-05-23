@@ -3,9 +3,9 @@ import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import CreateForm from "../components/Create/CreateForm";
 
-import { clubryContractAddr, clubryAbi } from "../constants";
+import { FactoryAddr, FactoryAbi, clubryAbi } from "../constants";
 import { Web3Context } from "../contexts/Web3Context";
-import { ethers } from "ethers";
+import { Contract, ethers } from "ethers";
 
 function Create() {
   const { provider, connect } = useContext(Web3Context);
@@ -25,13 +25,36 @@ function Create() {
         member: Number(e.target.member.value), // number
         stake: Number(e.target.stake.value), // number
         desc: e.target.desc.value, // string
-        // console.log(data)
       };
-      setSubmitting(true);
+      console.log(data);
 
+      setSubmitting(true);
       const signer = provider.getSigner();
-      console.log(signer);
-      console.log(provider);
+      const FactoryContractInstance = new Contract(
+        FactoryAddr,
+        FactoryAbi,
+        signer
+      );
+
+      const createClubContract = await FactoryContractInstance.createClub();
+
+      const receipt = await createClubContract.wait();
+      // Get the events
+      const events = receipt?.events[0].address;
+
+      const ClubAddress = events.toString();
+      console.log(`New club address is` + ClubAddress);
+      //////////////////////////////////////////////////
+
+      const ClubContractInstance = new Contract(ClubAddress, clubryAbi, signer);
+
+      const setClub = await ClubContractInstance.createClub(
+        data.member,
+        data.stake
+      );
+
+      await setClub.wait();
+
       setCompleted(true);
       setSubmitting(false);
       e.target.reset();
