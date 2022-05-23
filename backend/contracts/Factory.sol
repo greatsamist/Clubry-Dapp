@@ -11,13 +11,17 @@ contract Factory is CloneFactory {
 
     address public masterContract;
 
+
     constructor(address _masterContract) {
         masterContract = _masterContract;
     }
 
+    event DataStored(address createdClubAddress);
+
     function createClub() external {
         Club club = Club(createClone(masterContract));
         ClubArray.push(club);
+        emit DataStored(address(club));
     }
 
     function getChildren() external view returns (Club[] memory) {
