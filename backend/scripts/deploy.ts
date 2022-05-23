@@ -1,25 +1,28 @@
-// We require the Hardhat Runtime Environment explicitly here. This is optional
-// but useful for running the script in a standalone fashion through `node <script>`.
-//
-// When running the script with `npx hardhat run <script>` you'll find the Hardhat
-// Runtime Environment's members available in the global scope.
+import "@nomiclabs/hardhat-ethers";
+import "@nomiclabs/hardhat-etherscan";
 import { ethers } from "hardhat";
 
 async function main() {
-  // Hardhat always runs the compile task when running scripts with its command
-  // line interface.
-  //
-  // If this script is run directly using `node` you may want to call compile
-  // manually to make sure everything is compiled
-  // await hre.run('compile');
+  const contract = await ethers.getContractFactory("Club");
+  // deploy the contract
+  const contractDeploy = await contract.deploy();
+  await contractDeploy.deployed();
 
-  // We get the contract to deploy
-  const Greeter = await ethers.getContractFactory("Greeter");
-  const greeter = await Greeter.deploy("Hello, Hardhat!");
+  // print the address of the deployed contract
+  console.log("Contract Deploy at", contractDeploy.address);
 
-  await greeter.deployed();
+  console.log("Sleeping.....");
+  // Wait for polygon to notice that the contract has been deployed
+  await sleep(50000);
 
-  console.log("Greeter deployed to:", greeter.address);
+  // Verify the contract on polygon after deploying
+  // @ts-ignore
+  await hre.run("verify:verify", {
+    address: contractDeploy.address,
+    constructorArguments: [],
+  });
+
+  console.log("done");
 }
 
 // We recommend this pattern to be able to use async/await everywhere
@@ -28,3 +31,7 @@ main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
+
+function sleep(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
