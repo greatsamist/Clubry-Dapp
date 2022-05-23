@@ -22,6 +22,7 @@ Clubry is a collective investment scheme, where users come together to Co-invest
 - [Hardhat](https://Hardhat.org)
 - [Next.JS](https://nextjs.org)
 - [TypeScript](https://typescriptlang.org)
+- [JavaScript](https://javascript.com)
 - [Alchemy](https://alchemy.com)
 - [IPFS](https://ipfs.io)
 - [Gnosis Safe](https://gnosis-safe.io)
@@ -67,7 +68,7 @@ yarn run dev
 
 # Collaborators
 
--[Samuel](https://github.com/greatsamist/) -[Solomon](https://github.com/olajuwon74) -[Eric-Vondee](https://github.com/Eric-Vondee)
+-[Samuel](https://github.com/greatsamist/) -[Solomon](https://github.com/olajuwon74) -[Eric-Vondee](https://github.com/Eric-Vondee) -[Ephraim-nonso](https://github.com/Ephraim-nonso)
 
 # License
 
