@@ -23,6 +23,12 @@ async function main() {
   });
 
   console.log("done");
+
+  let getClubFactory = await ethers.getContractFactory("Factory")
+  let deployFactory = await getClubFactory.deploy(contractDeploy.address);
+  await deployFactory.deployed()
+  console.log("Factory contract deployed at",  deployFactory.address)
+
 }
 
 // We recommend this pattern to be able to use async/await everywhere
