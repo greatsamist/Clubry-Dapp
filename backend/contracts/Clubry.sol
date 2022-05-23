@@ -153,50 +153,12 @@ contract Club {
     function buyStake() public {}
 
     
-    // function createClub (address ownerAddress, uint128 numberOfPeople, uint128 perPeople) public {
-    //     ownerAddress = msg.sender;
-    //     SpecificClub storage club = aNewClub[msg.sender];
-    //     club.creatorAddress = msg.sender;
-    //     club.maxNumber = numberOfPeople;
-    //     club.minPercent = perPeople;
-    //     club.addedAddress.push(msg.sender);
-    //     index++;
-    // }
-
-    
-    // function joinClub (address intendingAddress, address clubAddress) public {
-    //     intendingAddress = msg.sender;
-    //     SpecificClub storage club = aNewClub[clubAddress];
-    //     if(club.addedAddress.length > club.maxNumber) revert maxParticipantsReached(); 
-    //     club.addedAddress.push(intendingAddress);
-    // }
-
-
-
-    // function clubVote (VoteResult _Vote, address clubCreator, address indicatingAddress) public {
-    //     SpecificClub storage club = aNewClub[clubCreator];
-    //     address toVote = msg.sender;
-    //     //address clubAdd = club.creatorAddress;
-    //     uint _amountOfAddedAddress = club.addedAddress.length;
-    //     uint percentOwnerCreated = club.minPercent;
-    //     for (uint i; i < club.addedAddress.length; i++){
-    //         if(club.addedAddress[i] == toVote){
-    //             if(_Vote == VoteResult.Yes){
-    //                 emit YouAdded(indicatingAddress, "Added");
-    //                 voteLogic(clubCreator, _amountOfAddedAddress, percentOwnerCreated,indicatingAddress);
-    //             }
-    //             else{
-    //                 emit YouAdded(indicatingAddress, "Not Added");
-    //                 revert("");
-    //             }
-    //         }
-
-    //         else{
-    //             revert("You cant vote");
-    //         }
-            
-    //     }
-    // }
+    function joinClub (address intendingAddress, address clubAddress) public {
+        intendingAddress = msg.sender;
+        SpecificClub storage club = aNewClub[clubAddress];
+        if(club.addedAddress.length > club.maxNumber) revert maxParticipantsReached(); 
+        club.addedAddress.push(intendingAddress);
+    }
 
 
     // function changeParameters(uint128 _maxnumber, uint128 _minPercent) public {
