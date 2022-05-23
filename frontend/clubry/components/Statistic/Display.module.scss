@@ -1,6 +1,94 @@
 .container {
-
+    font-size: 14px;
+    font-family: "Manrope", sans-serif;
     .wrapper {
+        margin: 4rem;
         padding: 4rem;
+        background-color: #232045;
+        .head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .left {
+                h3{
+                    color: #00C7BA;
+                    font-size: 24px;
+                    font-family: "Manrope";
+                }
+            }
+            .right {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                p {
+                    margin: 0 20px;
+                    span {
+                        margin: 0 10px;
+                    }
+                }
+                p:first-child {
+                    background-color: #00000040;
+                    padding: 10px;
+                    border-radius: 8px;
+                    span:first-child {
+                        color: #00C7BA;
+                    }
+                }
+                p:last-child {
+
+                    span:last-child {
+                        color: #00C7BA;
+                    }
+                }
+            }
+        }
+        .body {
+            padding: 4rem 0;
+            .invest {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                h4 {
+                    color: #917EFF;
+                    padding-bottom: 1rem;
+                }
+                .platform {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    flex: 3;
+                    margin-right: 6rem;
+                    
+                    h3 {
+                        margin-top: 2.5rem;
+                        color: #00C7BA;
+                    }
+                }
+
+                .display {
+                    height: 200px;
+                    flex: 3;
+                    padding: 2rem 4rem;
+                    background-color: #00000033;
+                    border-radius: 8px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    .flex {
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    .btn {
+                        background-color: #00C7BA;
+                        padding: 12px 18px;
+                        display: inline;
+                        text-align: center;
+                        border-radius: 8px;
+                    }
+                }
+            }
+        
+        }
     }
 }

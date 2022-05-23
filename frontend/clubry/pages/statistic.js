@@ -6,7 +6,6 @@ const Statistics = () => {
     return (
         <div>
            <Display />
-
         </div>
     )
 }
