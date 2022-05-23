@@ -10,9 +10,11 @@ Clubry is a collective investment scheme, where users come together to Co-invest
 
 #### Create a club
 
+![Create](https://github.com/greatsamist/Clubry-Dapp/blob/master/.docs/CreateClub.PNG)
+
 #### Club voting decision making
 
-![Create](https://github.com/greatsamist/Clubry-Dapp/blob/master/.docs/CreateClub.PNG)
+![Statistics](https://github.com/greatsamist/Clubry-Dapp/blob/master/.docs/StatPage.PNG)
 
 # Tools
 
