@@ -1,0 +1,38 @@
+type Deposit @entity {
+  id: ID!
+  user: User!
+  quantity: BigDecimal!
+  token: Bytes!
+  time: BigInt!
+}
+
+type User @entity {
+  id: ID!
+  address: Bytes!
+  groups: [UserGroup!] @derivedFrom(field: "user")
+}
+
+type UserGroup @entity {
+  id: ID!
+  user: User!
+  group: Group!
+  deposits: [Deposit!]!
+  totalDeposited: BigDecimal!
+  totalMinted: BigDecimal!
+}
+
+type Group @entity {
+  id: ID!
+  createdAt: BigInt!
+  address: Bytes!
+  owner: Bytes!
+  groupName: String!
+  groupSymbol: String!
+  depositToken: Bytes!
+  depositEndDate: BigInt!
+  depositLimit: BigInt!
+  treasureAddress: Bytes!
+  totalDeposited: BigDecimal!
+  totalMinted: BigDecimal!
+  members: [UserGroup!]! @derivedFrom(field: "group")
+}
