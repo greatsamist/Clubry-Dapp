@@ -1,0 +1,49 @@
+specVersion: 0.0.2
+description: Dispay graph
+repository: https://github.com/graphprotocol/example-subgraph
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: Factory
+    network: testnet
+    source:
+      address: '0xC41FCDB9d53981B220C0Be916b985578075134E1'
+      abi: Factory
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Factory
+      abis:
+        - name: Factory
+          file: ./abis/Factory.json
+      eventHandlers:
+        - event: NewClub(address,address,string,string,address,uint256,uint256,uint256,address)
+          handler: handleNewClub
+      file: ./src/mappings/factory.ts
+
+templates:
+  - name: Club
+    kind: ethereum/contract
+    network: testnet
+    source:
+      abi: Club
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      file: ./src/mappings/core.ts
+      entities:
+        - Club
+      abis:
+        - name: Club
+          file: ./abis/Club.json
+      eventHandlers:
+        - event: NewDeposit(address,uint256,address)
+          handler: handleNewDeposit
+        - event: NewBurn(address,uint256)
+          handler: handleNewBurn
+        - event: NewMint(address,uint256)
+          handler: handleNewMint
