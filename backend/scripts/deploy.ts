@@ -4,13 +4,16 @@ import { ethers } from "hardhat";
 
 async function main() {
   // Lets deploy club contract
-  const contract = await ethers.getContractFactory("Club");
-  // deploy the contract
-  const contractDeploy = await contract.deploy();
-  await contractDeploy.deployed();
+  const factory = await ethers.getContractFactory("ClubFactory");
+  // deploy the factory
+  const factoryDeploy = await factory.deploy(
+    "0xa6B71E26C5e0845f74c812102Ca7114b6a896AB2",
+    "0xd9Db270c1B5E3Bd161E8c8503c55cEABeE709552"
+  );
+  await factoryDeploy.deployed();
 
   // print the address of the deployed contract
-  console.log("Club Contract Deploy at", contractDeploy.address);
+  console.log("ClubFactory Contract Deploy at", factoryDeploy.address);
 
   console.log("Sleeping.....");
   // Wait for polygon to notice that the contract has been deployed
@@ -24,11 +27,6 @@ async function main() {
   // });
 
   // console.log("done");
-
-  let getClubFactory = await ethers.getContractFactory("Factory");
-  let deployFactory = await getClubFactory.deploy(contractDeploy.address);
-  await deployFactory.deployed();
-  console.log("Factory contract deployed at", deployFactory.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere

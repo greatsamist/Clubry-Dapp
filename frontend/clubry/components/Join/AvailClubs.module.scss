@@ -1,7 +1,7 @@
 @import "../../styles/abstracts/variable.module.scss";
 
 .container {
-  margin-top: 1rem;
+  margin-top: 8rem;
 }
 .header {
   margin: auto;
@@ -21,6 +21,7 @@
   align-content: center;
   align-items: flex-start;
   gap: 1.5rem;
+  margin: 18px auto;
 
   &__head {
     flex: 40%;
@@ -35,9 +36,6 @@
   flex: 20%;
   text-align: center;
   //   margin-right: 2rem;
-
-  &__header {
-  }
 
   &__num {
     color: $color-peach;

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.8.5;
+pragma solidity ^0.8.8;
 
 /// @title A simulator for trees
 /// @author Brennan, Eric, Ephraim, GreatSam
@@ -30,7 +30,7 @@ contract Club {
     // Indicates the vote result
     enum VoteResult {
         Yes,
-        N0
+        No
     }
 
     /// The count on club creation

@@ -40,7 +40,7 @@ function Create() {
 
       const receipt = await createClubContract.wait();
       // Get the events
-    0  const events = receipt?.events[0].address;
+      const events = receipt?.events[0].address;
       console.log(events);
       const ClubAddress = events.toString();
       console.log(`New club address is` + ClubAddress);

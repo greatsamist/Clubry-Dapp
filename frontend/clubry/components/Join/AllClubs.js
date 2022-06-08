@@ -1,14 +1,14 @@
 import React from "react";
-import styles from "./AllStake.module.scss";
+import styles from "./AllClubs.module.scss";
 
-function AllStake() {
+function AllClubs() {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <h3 className={styles.heading2}>All Stake</h3>
+        <h3 className={styles.heading2}>All Clubs</h3>
       </div>
     </div>
   );
 }
 
-export default AllStake;
+export default AllClubs;
