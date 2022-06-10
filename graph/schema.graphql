@@ -1,4 +1,5 @@
 type Deposit @entity {
+  # tx hash
   id: ID!
   user: User!
   quantity: BigDecimal!
@@ -7,32 +8,33 @@ type Deposit @entity {
 }
 
 type User @entity {
+  # tx hash
   id: ID!
   address: Bytes!
-  groups: [UserGroup!] @derivedFrom(field: "user")
+  groups: [UserClub!] @derivedFrom(field: "user")
 }
 
-type UserGroup @entity {
+type UserClub @entity {
   id: ID!
   user: User!
-  group: Group!
+  club: Club!
   deposits: [Deposit!]!
   totalDeposited: BigDecimal!
   totalMinted: BigDecimal!
 }
 
-type Group @entity {
+type Club @entity {
   id: ID!
   createdAt: BigInt!
   address: Bytes!
   owner: Bytes!
-  groupName: String!
-  groupSymbol: String!
+  clubName: String!
+  clubSymbol: String!
   depositToken: Bytes!
   depositEndDate: BigInt!
   depositLimit: BigInt!
   treasureAddress: Bytes!
   totalDeposited: BigDecimal!
   totalMinted: BigDecimal!
-  members: [UserGroup!]! @derivedFrom(field: "group")
+  # members: [UserClub!]! @derivedFrom(field: "club")
 }

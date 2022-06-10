@@ -1,0 +1,18 @@
+{
+  "name": "clubry-subgraph",
+  "version": "1.0.0",
+  "repository": "git@github.com:greatsamist/clubry.git",
+  "author": "Samuel Ojo",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "codegen": "graph codegen ./subgraph.yaml",
+    "build": "graph build ./subgraph.yaml",
+    "deploy": "graph deploy --product hosted-service --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ greatsamist/clubry ./subgraph.yaml --access-token"
+  },
+  "devDependencies": {
+    "@graphprotocol/graph-cli": "^0.28.1",
+    "@graphprotocol/graph-ts": "^0.27.0",
+    "typescript": "^4.2.4"
+  }
+}

@@ -1,24 +1,28 @@
-import { Group } from "../types/schema";
-import { NewGroup } from "../types/Factory/Factory";
-import { Group as GroupTemplate } from "../types/templates";
+import { Club } from "../../generated/schema";
+import { NewClub } from "../../generated/Factory/Factory";
+import { Club as ClubTemplate } from "../../generated/templates";
 import { BigDecimal, DataSourceContext } from "@graphprotocol/graph-ts";
 
-export function handleNewGroup(event: NewGroup): void {
-  let group = new Group(event.params.groupAddress.toHex());
-  group.address = event.params.groupAddress;
-  group.totalDeposited = BigDecimal.zero();
-  group.totalMinted = BigDecimal.zero();
-  group.owner = event.params.owner;
-  group.groupName = event.params.groupName;
-  group.groupSymbol = event.params.groupSymbol;
-  group.depositToken = event.params.depositToken;
-  group.depositEndDate = event.params.depositEndDate;
-  group.depositLimit = event.params.depositLimit;
-  group.treasureAddress = event.params.treasureAddress;
-  group.createdAt = event.block.timestamp;
-  group.save();
+export function handleNewClub(event: NewClub): void {
+  let club = Club.load(event.transaction.hash.toHex());
+  if (club == null) {
+    club = new Club(event.transaction.hash.toHex());
 
-  let context = new DataSourceContext();
-  context.setString("groupAddress", event.params.groupAddress.toHex());
-  GroupTemplate.createWithContext(event.params.groupAddress, context);
+    club.address = event.params.clubAddress;
+    club.totalDeposited = BigDecimal.zero();
+    club.totalMinted = BigDecimal.zero();
+    club.owner = event.params.owner;
+    club.clubName = event.params.clubName;
+    club.clubSymbol = event.params.clubSymbol;
+    club.depositToken = event.params.depositToken;
+    club.depositEndDate = event.params.depositEndDate;
+    club.depositLimit = event.params.depositLimit;
+    club.treasureAddress = event.params.treasureAddress;
+    club.createdAt = event.block.timestamp;
+    club.save();
+
+    let context = new DataSourceContext();
+    context.setString("clubAddress", event.params.clubAddress.toHex());
+    ClubTemplate.createWithContext(event.params.clubAddress, context);
+  }
 }

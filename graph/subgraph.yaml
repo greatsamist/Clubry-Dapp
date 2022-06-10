@@ -1,15 +1,16 @@
 specVersion: 0.0.2
-description: Dispay graph
-repository: https://github.com/graphprotocol/example-subgraph
+description: Clubry graph API
+repository: https://github.com/greatsamist/clubry
 schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: Factory
-    network: testnet
+    network: mumbai
     source:
-      address: '0xC41FCDB9d53981B220C0Be916b985578075134E1'
+      address: "0x94AA9ea5C6a51095c05f4578412bEDA41D4C57A4"
       abi: Factory
+      startBlock: 26677065
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -27,7 +28,7 @@ dataSources:
 templates:
   - name: Club
     kind: ethereum/contract
-    network: testnet
+    network: mumbai
     source:
       abi: Club
     mapping:
