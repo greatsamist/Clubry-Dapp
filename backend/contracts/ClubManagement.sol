@@ -20,6 +20,7 @@ contract ClubManagement is ERC20, Ownable {
     uint256 public maxMember;
     uint256 public depositLimit;
     uint256 public maxMembers;
+    // gnosis address
     address public treasureAddress;
 
     constructor(

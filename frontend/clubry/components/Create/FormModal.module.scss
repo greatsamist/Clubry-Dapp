@@ -1,39 +1,37 @@
 @import "../../styles/abstracts/variable.module.scss";
 
-.modal{
-	position: fixed; 
-	z-index: 1; 
-	left: 0;
-	top: 0;
-	right: 0;
-	width: 60%; 
-	overflow: auto; 
-	margin: auto;
-	margin-top: 6rem;
-	padding: 1rem 2rem 10rem;
-	background-color: $color-white;
-	text-align: center;
-	border-radius: $default-radius;
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  right: 0;
+  width: 60%;
+  overflow: auto;
+  margin: auto;
+  margin-top: 6rem;
+  padding: 1rem 2rem 10rem;
+  text-align: center;
+  background-color: $color-white;
+  border-radius: $default-radius;
 
+  &__text {
+    color: $color-primary;
+    font-size: 2rem;
+    font-weight: 800;
+  }
 
+  &__close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 
-	&__text{
-		color: $color-primary;
-		font-size: 2rem;
-		font-weight: 800;
-	}
-
-	&__close{
-		color: #aaa;
-		float: right;
-		font-size: 28px;
-		font-weight: bold;
-
-  	&:hover,
-	&:focus {
-	color: black;
-	text-decoration: none;
-	cursor: pointer;
-	}
-	}
+    &:hover,
+    &:focus {
+      color: #000000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
 }
